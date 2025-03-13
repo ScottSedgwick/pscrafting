@@ -12,14 +12,15 @@ to generate this file without the comments in this block.
 -}
 { name = "my-project"
 , dependencies =
-  [ "bifunctors"
+  [ "arrays"
   , "console"
   , "effect"
-  , "elmish"
-  , "elmish-html"
+  , "flame"
+  , "foldable-traversable"
+  , "integers"
   , "maybe"
+  , "numbers"
   , "prelude"
-  , "transformers"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
