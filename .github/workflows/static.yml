@@ -36,8 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only wwwroot folder
-          path: './wwwroot'
+          path: 'wwwroot'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
