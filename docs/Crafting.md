@@ -114,30 +114,30 @@ So if you were improving a Common item (cost 100GP) to an Uncommon Item (cost 20
 
 Note that if the final rarity of the item is Uncommon or lower, the multipliers for Magic Item Adept apply.
 
-# TODO (for the application)
+## Potions
 
-Tasks:
-* Item Enchantment
-  * Item Rarity
-  * Single use item
-  * Mimic a spell? Access to spell, # times per week, count of distinct spells.
-  * Access to identical magic item
-  * Item can be Replicated? Have access to infusion? Infusion active?
-  * Component time reduction
-* Magic item bonus improvement
-  * Starting rarity
-  * Final rarity
-  * Component time reduction
-* Magic item ability improvement
-  * Starting rarity
-  * Final rarity
-  * Component time reduction
-* Original magic item research
-* Potions
-* Scrolls
+Base cost for a potion is determined by rarity. Components are explicitly removed from affecting the crafting time, as they are the primary essential ingredient.
 
-Outputs:
-* Crafting DC
-* Personnel costs
-* Material costs
-* Time required
+Time and cost is calculated as for other magic items, with the following changes:
+
+1. Components are essential, and do not reduce crafting time.
+2. Cost and time for creation is half of what it would take to create a permanent magic item.
+
+## Scrolls
+
+Rarity is determined by spell level, as shown:
+
+| Spell Level   | Scroll Rarity |
+| ------------- | ------------- |
+| Cantrip, 1st  | Common        |
+| 2nd, 3rd      | Uncommon      |
+| 4th, 5th      | Rare          |
+| 6th, 7th, 8th | Very rare     |
+| 9th           | Legendary     |
+
+Base cost is determined by rarity.
+
+Time and cost is calculated as for other magic items, with the following changes:
+
+1. Access to the spell in question is essential, and does not reduce crafting time.
+2. Cost and time for creation is half of what it would take to create a permanent magic item.

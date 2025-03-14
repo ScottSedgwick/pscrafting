@@ -1147,12 +1147,12 @@
   var foldMapDefaultR = function(dictFoldable) {
     var foldr2 = foldr(dictFoldable);
     return function(dictMonoid) {
-      var append6 = append(dictMonoid.Semigroup0());
+      var append8 = append(dictMonoid.Semigroup0());
       var mempty2 = mempty(dictMonoid);
       return function(f) {
         return foldr2(function(x) {
           return function(acc) {
-            return append6(f(x))(acc);
+            return append8(f(x))(acc);
           };
         })(mempty2);
       };
@@ -2074,13 +2074,20 @@
   }();
 
   // output/UiFuncs/index.js
-  var show3 = /* @__PURE__ */ show(showInt);
   var toNodeArray2 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
+  var toNodeArray1 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var span2 = /* @__PURE__ */ span(toNodeArray2)(toNodeArray1);
+  var show3 = /* @__PURE__ */ show(showInt);
   var option2 = /* @__PURE__ */ option(toNodeArray2)(toNodeStringHtml);
-  var select2 = /* @__PURE__ */ select(toNodeArray2)(/* @__PURE__ */ toNodeArray(toNodeHtmlHtml));
+  var select2 = /* @__PURE__ */ select(toNodeArray2)(toNodeArray1);
   var class$prime2 = /* @__PURE__ */ class$prime(toClassListString);
   var map4 = /* @__PURE__ */ map(functorArray);
   var input2 = /* @__PURE__ */ input(toNodeArray2);
+  var tooltipCaption = function(tooltip) {
+    return function(caption) {
+      return span2([createAttribute("data-tooltip")(tooltip)])([text(caption)]);
+    };
+  };
   var showWeeks = function(weeks) {
     return toStringWith(fixed(3))(weeks);
   };
@@ -2127,14 +2134,14 @@
 
   // output/BasicItem/index.js
   var toNodeArray3 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
-  var toNodeArray1 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
-  var div4 = /* @__PURE__ */ div3(toNodeArray3)(toNodeArray1);
+  var toNodeArray12 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div4 = /* @__PURE__ */ div3(toNodeArray3)(toNodeArray12);
   var class$prime3 = /* @__PURE__ */ class$prime(toClassListString);
   var append2 = /* @__PURE__ */ append(semigroupArray);
-  var label2 = /* @__PURE__ */ label(toNodeArray3)(toNodeArray1);
+  var label2 = /* @__PURE__ */ label(toNodeArray3)(toNodeArray12);
   var input3 = /* @__PURE__ */ input(toNodeArray3);
   var show4 = /* @__PURE__ */ show(showInt);
-  var label_2 = /* @__PURE__ */ label_(toNodeArray1);
+  var label_2 = /* @__PURE__ */ label_(toNodeArray12);
   var OnPriceChange = /* @__PURE__ */ function() {
     function OnPriceChange2(value0) {
       this.value0 = value0;
@@ -2305,6 +2312,34 @@
     TabScroll2.value = new TabScroll2();
     return TabScroll2;
   }();
+  var RINo = /* @__PURE__ */ function() {
+    function RINo2() {
+    }
+    ;
+    RINo2.value = new RINo2();
+    return RINo2;
+  }();
+  var YesNoAccess = /* @__PURE__ */ function() {
+    function YesNoAccess2() {
+    }
+    ;
+    YesNoAccess2.value = new YesNoAccess2();
+    return YesNoAccess2;
+  }();
+  var YesNotActive = /* @__PURE__ */ function() {
+    function YesNotActive2() {
+    }
+    ;
+    YesNotActive2.value = new YesNotActive2();
+    return YesNotActive2;
+  }();
+  var YesActive = /* @__PURE__ */ function() {
+    function YesActive2() {
+    }
+    ;
+    YesActive2.value = new YesActive2();
+    return YesActive2;
+  }();
   var Common = /* @__PURE__ */ function() {
     function Common3() {
     }
@@ -2339,6 +2374,69 @@
     ;
     Legendary3.value = new Legendary3();
     return Legendary3;
+  }();
+  var No = /* @__PURE__ */ function() {
+    function No2() {
+    }
+    ;
+    No2.value = new No2();
+    return No2;
+  }();
+  var YesButNoAccess = /* @__PURE__ */ function() {
+    function YesButNoAccess2() {
+    }
+    ;
+    YesButNoAccess2.value = new YesButNoAccess2();
+    return YesButNoAccess2;
+  }();
+  var Cast1 = /* @__PURE__ */ function() {
+    function Cast12() {
+    }
+    ;
+    Cast12.value = new Cast12();
+    return Cast12;
+  }();
+  var Cast2 = /* @__PURE__ */ function() {
+    function Cast22() {
+    }
+    ;
+    Cast22.value = new Cast22();
+    return Cast22;
+  }();
+  var Cast3 = /* @__PURE__ */ function() {
+    function Cast32() {
+    }
+    ;
+    Cast32.value = new Cast32();
+    return Cast32;
+  }();
+  var Cast4 = /* @__PURE__ */ function() {
+    function Cast42() {
+    }
+    ;
+    Cast42.value = new Cast42();
+    return Cast42;
+  }();
+  var Cast5 = /* @__PURE__ */ function() {
+    function Cast52() {
+    }
+    ;
+    Cast52.value = new Cast52();
+    return Cast52;
+  }();
+  var Cast6 = /* @__PURE__ */ function() {
+    function Cast62() {
+    }
+    ;
+    Cast62.value = new Cast62();
+    return Cast62;
+  }();
+  var Cast7 = /* @__PURE__ */ function() {
+    function Cast72() {
+    }
+    ;
+    Cast72.value = new Cast72();
+    return Cast72;
   }();
   var CsNone = /* @__PURE__ */ function() {
     function CsNone2() {
@@ -2473,7 +2571,7 @@
         return 50;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 177, column 1 - line 180, column 35): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 180, column 1 - line 183, column 35): " + [v.constructor.name]);
     }
   };
   var valueableToolQuality = {
@@ -2498,7 +2596,7 @@
         return 15;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 116, column 1 - line 121, column 32): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 119, column 1 - line 124, column 32): " + [v.constructor.name]);
     }
   };
   var valueableToolBonus = {
@@ -2523,7 +2621,28 @@
         return 20;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 150, column 1 - line 155, column 30): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 153, column 1 - line 158, column 30): " + [v.constructor.name]);
+    }
+  };
+  var valueableReplicateItem = {
+    getValue: function(v) {
+      if (v instanceof RINo) {
+        return 0;
+      }
+      ;
+      if (v instanceof YesNoAccess) {
+        return 0;
+      }
+      ;
+      if (v instanceof YesNotActive) {
+        return 0.1;
+      }
+      ;
+      if (v instanceof YesActive) {
+        return 0.25;
+      }
+      ;
+      throw new Error("Failed pattern match at Types (line 443, column 1 - line 447, column 31): " + [v.constructor.name]);
     }
   };
   var valueableRarity = {
@@ -2548,7 +2667,48 @@
         return 5e3;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 339, column 1 - line 344, column 30): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 342, column 1 - line 347, column 30): " + [v.constructor.name]);
+    }
+  };
+  var valueableMimicSpell = {
+    getValue: function(v) {
+      if (v instanceof No) {
+        return 0;
+      }
+      ;
+      if (v instanceof YesButNoAccess) {
+        return 1;
+      }
+      ;
+      if (v instanceof Cast1) {
+        return 2;
+      }
+      ;
+      if (v instanceof Cast2) {
+        return 3;
+      }
+      ;
+      if (v instanceof Cast3) {
+        return 4;
+      }
+      ;
+      if (v instanceof Cast4) {
+        return 5;
+      }
+      ;
+      if (v instanceof Cast5) {
+        return 6;
+      }
+      ;
+      if (v instanceof Cast6) {
+        return 7;
+      }
+      ;
+      if (v instanceof Cast7) {
+        return 8;
+      }
+      ;
+      throw new Error("Failed pattern match at Types (line 406, column 1 - line 415, column 32): " + [v.constructor.name]);
     }
   };
   var valueableCraftingSanctifi = {
@@ -2565,7 +2725,7 @@
         return 0.27;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 264, column 1 - line 267, column 27): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 267, column 1 - line 270, column 27): " + [v.constructor.name]);
     }
   };
   var valueableCraftingEnvironm = {
@@ -2594,7 +2754,7 @@
         return 0.35;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 233, column 1 - line 239, column 30): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 236, column 1 - line 242, column 30): " + [v.constructor.name]);
     }
   };
   var valueableCrafterType = {
@@ -2631,7 +2791,7 @@
         return 100;
       }
       ;
-      throw new Error("Failed pattern match at Types (line 80, column 1 - line 88, column 35): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 83, column 1 - line 91, column 35): " + [v.constructor.name]);
     }
   };
   var showToolSanctification = {
@@ -2648,7 +2808,7 @@
         return "Themed";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 167, column 1 - line 170, column 35): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 170, column 1 - line 173, column 35): " + [v.constructor.name]);
     }
   };
   var showToolQuality = {
@@ -2673,7 +2833,7 @@
         return "Masterwork";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 102, column 1 - line 107, column 36): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 105, column 1 - line 110, column 36): " + [v.constructor.name]);
     }
   };
   var showToolBonus = {
@@ -2698,7 +2858,7 @@
         return "PlusThree";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 135, column 1 - line 140, column 33): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 138, column 1 - line 143, column 33): " + [v.constructor.name]);
     }
   };
   var showTabs = {
@@ -2723,7 +2883,28 @@
         return "Scrolls";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 302, column 1 - line 307, column 29): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 305, column 1 - line 310, column 29): " + [v.constructor.name]);
+    }
+  };
+  var showReplicateItem = {
+    show: function(v) {
+      if (v instanceof RINo) {
+        return "No";
+      }
+      ;
+      if (v instanceof YesNoAccess) {
+        return "Yes, but cast has no access to it";
+      }
+      ;
+      if (v instanceof YesNotActive) {
+        return "Yes, but it is not active";
+      }
+      ;
+      if (v instanceof YesActive) {
+        return "Yes, and it is active";
+      }
+      ;
+      throw new Error("Failed pattern match at Types (line 430, column 1 - line 434, column 43): " + [v.constructor.name]);
     }
   };
   var showRarity = {
@@ -2748,7 +2929,48 @@
         return "Legendary";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 323, column 1 - line 328, column 33): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 326, column 1 - line 331, column 33): " + [v.constructor.name]);
+    }
+  };
+  var showMimicSpell = {
+    show: function(v) {
+      if (v instanceof No) {
+        return "No";
+      }
+      ;
+      if (v instanceof YesButNoAccess) {
+        return "Yes, but crafter has no access to it";
+      }
+      ;
+      if (v instanceof Cast1) {
+        return "Cast 1 time per week";
+      }
+      ;
+      if (v instanceof Cast2) {
+        return "Cast 2 times per week";
+      }
+      ;
+      if (v instanceof Cast3) {
+        return "Cast 3 times per week";
+      }
+      ;
+      if (v instanceof Cast4) {
+        return "Cast 4 times per week";
+      }
+      ;
+      if (v instanceof Cast5) {
+        return "Cast 5 times per week";
+      }
+      ;
+      if (v instanceof Cast6) {
+        return "Cast 6 times per week";
+      }
+      ;
+      if (v instanceof Cast7) {
+        return "Cast 7 times per week";
+      }
+      ;
+      throw new Error("Failed pattern match at Types (line 383, column 1 - line 392, column 48): " + [v.constructor.name]);
     }
   };
   var showCraftingSanctificatio = {
@@ -2765,7 +2987,7 @@
         return "Themed";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 253, column 1 - line 256, column 27): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 256, column 1 - line 259, column 27): " + [v.constructor.name]);
     }
   };
   var showCraftingEnvironment = {
@@ -2794,7 +3016,7 @@
         return "Apex";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 216, column 1 - line 222, column 28): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 219, column 1 - line 225, column 28): " + [v.constructor.name]);
     }
   };
   var showCrafterType = {
@@ -2831,7 +3053,7 @@
         return "Artificer (specialist)";
       }
       ;
-      throw new Error("Failed pattern match at Types (line 59, column 1 - line 67, column 50): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Types (line 62, column 1 - line 70, column 50): " + [v.constructor.name]);
     }
   };
   var fromStringToolSanctificat = {
@@ -2893,6 +3115,27 @@
       return NoToolBonus.value;
     }
   };
+  var fromStringReplicateItem = {
+    fromString: function(v) {
+      if (v === "No") {
+        return RINo.value;
+      }
+      ;
+      if (v === "Yes, but cast has no access to it") {
+        return YesNoAccess.value;
+      }
+      ;
+      if (v === "Yes, but it is not active") {
+        return YesNotActive.value;
+      }
+      ;
+      if (v === "Yes, and it is active") {
+        return YesActive.value;
+      }
+      ;
+      return RINo.value;
+    }
+  };
   var fromStringRarity = {
     fromString: function(v) {
       if (v === "Common") {
@@ -2916,6 +3159,47 @@
       }
       ;
       return Common.value;
+    }
+  };
+  var fromStringMimicSpell = {
+    fromString: function(v) {
+      if (v === "No") {
+        return No.value;
+      }
+      ;
+      if (v === "Yes, but crafter has no access to it") {
+        return YesButNoAccess.value;
+      }
+      ;
+      if (v === "Cast 1 time per week") {
+        return Cast1.value;
+      }
+      ;
+      if (v === "Cast 2 times per week") {
+        return Cast2.value;
+      }
+      ;
+      if (v === "Cast 3 times per week") {
+        return Cast3.value;
+      }
+      ;
+      if (v === "Cast 4 times per week") {
+        return Cast4.value;
+      }
+      ;
+      if (v === "Cast 5 times per week") {
+        return Cast5.value;
+      }
+      ;
+      if (v === "Cast 6 times per week") {
+        return Cast6.value;
+      }
+      ;
+      if (v === "Cast 7 times per week") {
+        return Cast7.value;
+      }
+      ;
+      return No.value;
     }
   };
   var fromStringCraftingSanctif = {
@@ -3021,9 +3305,19 @@
       getAll: [TabBasicItem.value, TabItemImprovement.value, TabMagicItem.value, TabPotion.value, TabScroll.value]
     };
   }();
+  var enumerableReplicateItem = /* @__PURE__ */ function() {
+    return {
+      getAll: [RINo.value, YesNoAccess.value, YesNotActive.value, YesActive.value]
+    };
+  }();
   var enumerableRarity = /* @__PURE__ */ function() {
     return {
       getAll: [Common.value, Uncommon.value, Rare.value, VeryRare.value, Legendary.value]
+    };
+  }();
+  var enumerableMimicSpell = /* @__PURE__ */ function() {
+    return {
+      getAll: [No.value, YesButNoAccess.value, Cast1.value, Cast2.value, Cast3.value, Cast4.value, Cast5.value, Cast6.value, Cast7.value]
     };
   }();
   var enumerableCraftingSanctif = /* @__PURE__ */ function() {
@@ -3041,6 +3335,17 @@
       getAll: [NoCrafter.value, Unskilled.value, PartlySkilled.value, Skilled.value, PlayerCharacter.value, Expertise.value, Artificer.value, Specialist.value]
     };
   }();
+  var isUncommon = function(v) {
+    if (v instanceof Common) {
+      return true;
+    }
+    ;
+    if (v instanceof Uncommon) {
+      return true;
+    }
+    ;
+    return false;
+  };
   var getValue = function(dict) {
     return dict.getValue;
   };
@@ -3056,7 +3361,7 @@
       return getValue1(v.value0.quality) + getValue2(v.value0.bonus) + getValue3(v.value0.sanctification);
     }
     ;
-    throw new Error("Failed pattern match at Types (line 200, column 1 - line 200, column 40): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Types (line 203, column 1 - line 203, column 40): " + [v.constructor.name]);
   };
   var valueableArray = function(dictValueable) {
     var getValue52 = getValue(dictValueable);
@@ -3078,7 +3383,7 @@
           return getValue52(v.value0);
         }
         ;
-        throw new Error("Failed pattern match at Types (line 37, column 1 - line 39, column 33): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Types (line 40, column 1 - line 42, column 33): " + [v.constructor.name]);
       }
     };
   };
@@ -3192,6 +3497,29 @@
       };
     }
   };
+  var eqReplicateItem = {
+    eq: function(x) {
+      return function(y) {
+        if (x instanceof RINo && y instanceof RINo) {
+          return true;
+        }
+        ;
+        if (x instanceof YesNoAccess && y instanceof YesNoAccess) {
+          return true;
+        }
+        ;
+        if (x instanceof YesNotActive && y instanceof YesNotActive) {
+          return true;
+        }
+        ;
+        if (x instanceof YesActive && y instanceof YesActive) {
+          return true;
+        }
+        ;
+        return false;
+      };
+    }
+  };
   var eqRarity = {
     eq: function(x) {
       return function(y) {
@@ -3212,6 +3540,49 @@
         }
         ;
         if (x instanceof Legendary && y instanceof Legendary) {
+          return true;
+        }
+        ;
+        return false;
+      };
+    }
+  };
+  var eqMimicSpell = {
+    eq: function(x) {
+      return function(y) {
+        if (x instanceof No && y instanceof No) {
+          return true;
+        }
+        ;
+        if (x instanceof YesButNoAccess && y instanceof YesButNoAccess) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast1 && y instanceof Cast1) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast2 && y instanceof Cast2) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast3 && y instanceof Cast3) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast4 && y instanceof Cast4) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast5 && y instanceof Cast5) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast6 && y instanceof Cast6) {
+          return true;
+        }
+        ;
+        if (x instanceof Cast7 && y instanceof Cast7) {
           return true;
         }
         ;
@@ -3325,20 +3696,20 @@
 
   // output/Components/index.js
   var toNodeArray4 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
-  var toNodeArray12 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
-  var div5 = /* @__PURE__ */ div3(toNodeArray4)(toNodeArray12);
+  var toNodeArray13 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div5 = /* @__PURE__ */ div3(toNodeArray4)(toNodeArray13);
   var class$prime4 = /* @__PURE__ */ class$prime(toClassListString);
   var sum3 = /* @__PURE__ */ sum(foldableArray)(semiringNumber);
   var map6 = /* @__PURE__ */ map(functorArray);
-  var article2 = /* @__PURE__ */ article(toNodeArray4)(toNodeArray12);
-  var div_2 = /* @__PURE__ */ div_(toNodeArray12);
+  var article2 = /* @__PURE__ */ article(toNodeArray4)(toNodeArray13);
+  var div_2 = /* @__PURE__ */ div_(toNodeArray13);
   var show5 = /* @__PURE__ */ show(showInt);
   var map1 = /* @__PURE__ */ map(functorMaybe);
-  var article_2 = /* @__PURE__ */ article_(toNodeArray12);
+  var article_2 = /* @__PURE__ */ article_(toNodeArray13);
   var h3_2 = /* @__PURE__ */ h3_(toNodeStringHtml);
   var append1 = /* @__PURE__ */ append(semigroupArray);
-  var strong_2 = /* @__PURE__ */ strong_(toNodeArray12);
-  var details_2 = /* @__PURE__ */ details_(toNodeArray12);
+  var strong_2 = /* @__PURE__ */ strong_(toNodeArray13);
+  var details_2 = /* @__PURE__ */ details_(toNodeArray13);
   var summary_2 = /* @__PURE__ */ summary_(toNodeHtmlHtml);
   var div_1 = /* @__PURE__ */ div_(toNodeHtmlHtml);
   var ComponentRarityChanged = /* @__PURE__ */ function() {
@@ -3852,8 +4223,8 @@
   var map7 = /* @__PURE__ */ map(functorArray);
   var toNodeArray5 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
   var div6 = /* @__PURE__ */ div3(toNodeArray5);
-  var toNodeArray13 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
-  var div1 = /* @__PURE__ */ div6(toNodeArray13);
+  var toNodeArray14 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div1 = /* @__PURE__ */ div6(toNodeArray14);
   var class$prime5 = /* @__PURE__ */ class$prime(toClassListString);
   var show6 = /* @__PURE__ */ show(showInt);
   var mkSelect3 = /* @__PURE__ */ mkSelect(showCrafterType)(eqCrafterType);
@@ -3866,10 +4237,10 @@
   var getAll22 = /* @__PURE__ */ getAll(enumerableToolBonus);
   var mkSelect32 = /* @__PURE__ */ mkSelect(showToolSanctification)(eqToolSanctification);
   var getAll32 = /* @__PURE__ */ getAll(enumerableToolSanctificat);
-  var article_3 = /* @__PURE__ */ article_(toNodeArray13);
+  var article_3 = /* @__PURE__ */ article_(toNodeArray14);
   var h3_3 = /* @__PURE__ */ h3_(toNodeStringHtml);
   var append12 = /* @__PURE__ */ append(semigroupArray);
-  var strong_3 = /* @__PURE__ */ strong_(toNodeArray13);
+  var strong_3 = /* @__PURE__ */ strong_(toNodeArray14);
   var getValue22 = /* @__PURE__ */ getValue(valueableCraftingEnvironm);
   var getValue32 = /* @__PURE__ */ getValue(valueableCraftingSanctifi);
   var mkSelect4 = /* @__PURE__ */ mkSelect(showCraftingEnvironment)(eqCraftingEnvironment);
@@ -3885,9 +4256,9 @@
   var any2 = /* @__PURE__ */ any(foldableArray)(heytingAlgebraBoolean);
   var eq2 = /* @__PURE__ */ eq(eqToolSanctification);
   var getValue42 = /* @__PURE__ */ getValue(valueableCrafterType);
-  var article3 = /* @__PURE__ */ article(toNodeArray5)(toNodeArray13);
+  var article3 = /* @__PURE__ */ article(toNodeArray5)(toNodeArray14);
   var show1 = /* @__PURE__ */ show(showNumber);
-  var details2 = /* @__PURE__ */ details(toNodeArray5)(toNodeArray13);
+  var details2 = /* @__PURE__ */ details(toNodeArray5)(toNodeArray14);
   var summary2 = /* @__PURE__ */ summary(toNodeArray5)(toNodeHtmlHtml);
   var div22 = /* @__PURE__ */ div6(toNodeHtmlHtml);
   var CrafterTypeChanged = /* @__PURE__ */ function() {
@@ -4351,7 +4722,7 @@
     return totalInput(state2) * environmentMultiplier(state2.environment);
   };
   var viewSummary2 = function(model) {
-    return article3([class$prime5("round primary no-elevate")])([div1([class$prime5("grid")])([div1([class$prime5("s3")])([text("Crafting Output: " + showGPs(totalInput(model)))]), div1([class$prime5("s3")])([text("Environment Multiplier: " + show1(environmentMultiplier(model.environment)))]), div1([class$prime5("s3")])([text("Effective Output per week: " + showGPs(effectiveOutput(model)))]), div1([class$prime5("s3")])([text("Weekly cost: " + showGPs(weeklyCost(model)))])])]);
+    return article3([class$prime5("round primary no-elevate")])([div1([class$prime5("grid")])([div1([class$prime5("s3")])([text("Crafting Output: " + showGPs(totalInput(model)))]), div1([class$prime5("s3")])([text("Environment Multiplier: x" + show1(environmentMultiplier(model.environment)))]), div1([class$prime5("s3")])([text("Effective Output per week: " + showGPs(effectiveOutput(model)))]), div1([class$prime5("s3")])([text("Weekly cost: " + showGPs(weeklyCost(model)))])])]);
   };
   var view3 = function(state2) {
     return article_3([details2([name("crafting-inputs")])([summary2([name("crafting-inputs-summary")])(viewSummary2(state2)), div22([class$prime5("detail")])(viewDetail2(state2))])]);
@@ -4416,6 +4787,7 @@
   var fromString6 = /* @__PURE__ */ fromString2(fromStringRarity);
   var div7 = /* @__PURE__ */ div3(/* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData))(/* @__PURE__ */ toNodeArray(toNodeHtmlHtml));
   var class$prime6 = /* @__PURE__ */ class$prime(toClassListString);
+  var div12 = /* @__PURE__ */ div(euclideanRingInt);
   var append3 = /* @__PURE__ */ append(semigroupArray);
   var mkSelect6 = /* @__PURE__ */ mkSelect(showRarity)(eqRarity);
   var getAll6 = /* @__PURE__ */ getAll(enumerableRarity);
@@ -4586,6 +4958,17 @@
       return [div7([class$prime6("s3")])([text(caption)]), div7([class$prime6("s9")])([content])];
     };
   };
+  var isMaybeUncommon = function(v) {
+    if (v instanceof Nothing) {
+      return false;
+    }
+    ;
+    if (v instanceof Just) {
+      return isUncommon(v.value0);
+    }
+    ;
+    throw new Error("Failed pattern match at ItemImprovement (line 98, column 1 - line 98, column 43): " + [v.constructor.name]);
+  };
   var init4 = /* @__PURE__ */ function() {
     return {
       valueUnits: UnitsRarity.value,
@@ -4603,23 +4986,33 @@
   var viewRarity = function(output) {
     return function(reduction) {
       return function(asstCost) {
-        return function(state2) {
-          var initRar = getRarity(state2.initialValue);
-          var initVal = getMaybeRarity(initRar);
-          var finalRar = getRarity(state2.finalValue);
-          var finalVal = getMaybeRarity(finalRar);
-          var basePrice = function() {
-            var $45 = finalVal - initVal < 0;
-            if ($45) {
-              return 0;
-            }
-            ;
-            return round2(finalVal - initVal);
-          }();
-          var costPrice = calcCostPrice(basePrice);
-          var craftTime = calcCraftingTime(basePrice)(output)(reduction);
-          var craftCost = calcCraftingCost(costPrice)(craftTime)(asstCost);
-          return append3(mkRow4("Initial Rarity:")(mkSelect6("initial-rarity")(InitialRarityChanged.create)(getAll6)(initRar)))(append3(mkRow4("Final Rarity:")(mkSelect6("final-rarity")(FinalRarityChanged.create)(getAll6)(finalRar)))(append3(mkRow4("Value Difference:")(text(showGPs(toNumber(basePrice)))))(append3(mkRow4("Crafting Time (weeks):")(text(showWeeks(craftTime))))(append3(mkRow4("Crafting Time (hours):")(text(showHours(craftTime))))(mkRow4("Crafting Cost:")(text(showGPs(craftCost))))))));
+        return function(adept) {
+          return function(state2) {
+            var initRar = getRarity(state2.initialValue);
+            var initVal = getMaybeRarity(initRar);
+            var finalRar = getRarity(state2.finalValue);
+            var finalVal = getMaybeRarity(finalRar);
+            var basePrice = function() {
+              var $50 = finalVal - initVal < 0;
+              if ($50) {
+                return 0;
+              }
+              ;
+              return round2(finalVal - initVal);
+            }();
+            var adjPrice = function() {
+              var $51 = isMaybeUncommon(finalRar);
+              if ($51) {
+                return div12(basePrice)(2);
+              }
+              ;
+              return basePrice;
+            }();
+            var costPrice = calcCostPrice(adjPrice);
+            var craftTime = calcCraftingTime(adjPrice)(output)(reduction);
+            var craftCost = calcCraftingCost(costPrice)(craftTime)(asstCost);
+            return append3(mkRow4("Initial Rarity:")(mkSelect6("initial-rarity")(InitialRarityChanged.create)(getAll6)(initRar)))(append3(mkRow4("Final Rarity:")(mkSelect6("final-rarity")(FinalRarityChanged.create)(getAll6)(finalRar)))(append3(mkRow4("Value Difference:")(text(showGPs(toNumber(adjPrice)))))(append3(mkRow4("Crafting Time (weeks):")(text(showWeeks(craftTime))))(append3(mkRow4("Crafting Time (hours):")(text(showHours(craftTime))))(mkRow4("Crafting Cost:")(text(showGPs(craftCost))))))));
+          };
         };
       };
     };
@@ -4634,21 +5027,23 @@
   var viewGold = function(output) {
     return function(reduction) {
       return function(asstCost) {
-        return function(state2) {
-          var initVal = getGPs(state2.initialValue);
-          var finalVal = getGPs(state2.finalValue);
-          var basePrice = function() {
-            var $48 = (finalVal - initVal | 0) < 0;
-            if ($48) {
-              return 0;
-            }
-            ;
-            return finalVal - initVal | 0;
-          }();
-          var costPrice = calcCostPrice(basePrice);
-          var craftTime = calcCraftingTime(basePrice)(output)(reduction);
-          var craftCost = calcCraftingCost(costPrice)(craftTime)(asstCost);
-          return append3(mkRow4("Initial Value:")(mkNumber("initial-value")(InitialValueChanged.create)(initVal)))(append3(mkRow4("Final Value:")(mkNumber("final-value")(FinalValueChanged.create)(finalVal)))(append3(mkRow4("Crafting Time (weeks):")(text(showWeeks(craftTime))))(append3(mkRow4("Crafting Time (hours):")(text(showHours(craftTime))))(mkRow4("Crafting Cost:")(text(showGPs(craftCost)))))));
+        return function(v) {
+          return function(state2) {
+            var initVal = getGPs(state2.initialValue);
+            var finalVal = getGPs(state2.finalValue);
+            var basePrice = function() {
+              var $54 = (finalVal - initVal | 0) < 0;
+              if ($54) {
+                return 0;
+              }
+              ;
+              return finalVal - initVal | 0;
+            }();
+            var costPrice = calcCostPrice(basePrice);
+            var craftTime = calcCraftingTime(basePrice)(output)(reduction);
+            var craftCost = calcCraftingCost(costPrice)(craftTime)(asstCost);
+            return append3(mkRow4("Initial Value:")(mkNumber("initial-value")(InitialValueChanged.create)(initVal)))(append3(mkRow4("Final Value:")(mkNumber("final-value")(FinalValueChanged.create)(finalVal)))(append3(mkRow4("Crafting Time (weeks):")(text(showWeeks(craftTime))))(append3(mkRow4("Crafting Time (hours):")(text(showHours(craftTime))))(mkRow4("Crafting Cost:")(text(showGPs(craftCost)))))));
+          };
         };
       };
     };
@@ -4672,167 +5067,84 @@
   var view4 = function(output) {
     return function(reduction) {
       return function(asstCost) {
-        return function(state2) {
-          var subview = function() {
-            if (state2.valueUnits instanceof UnitsGoldPieces) {
-              return viewGold;
-            }
-            ;
-            if (state2.valueUnits instanceof UnitsRarity) {
-              return viewRarity;
-            }
-            ;
-            throw new Error("Failed pattern match at ItemImprovement (line 71, column 17 - line 73, column 48): " + [state2.valueUnits.constructor.name]);
-          }();
-          return div7([class$prime6("grid")])(append3([div7([class$prime6("s3")])([text("Value Units:")]), div7([class$prime6("s9")])([mkSelect13("improvement-units")(ValueUnitsChanged.create)(getAll13)(new Just(state2.valueUnits))])])(subview(output)(reduction)(asstCost)(state2)));
+        return function(adept) {
+          return function(state2) {
+            var subview = function() {
+              if (state2.valueUnits instanceof UnitsGoldPieces) {
+                return viewGold;
+              }
+              ;
+              if (state2.valueUnits instanceof UnitsRarity) {
+                return viewRarity;
+              }
+              ;
+              throw new Error("Failed pattern match at ItemImprovement (line 71, column 17 - line 73, column 48): " + [state2.valueUnits.constructor.name]);
+            }();
+            return div7([class$prime6("grid")])(append3([div7([class$prime6("s3")])([text("Value Units:")]), div7([class$prime6("s9")])([mkSelect13("improvement-units")(ValueUnitsChanged.create)(getAll13)(new Just(state2.valueUnits))])])(subview(output)(reduction)(asstCost)(adept)(state2)));
+          };
         };
       };
     };
   };
 
   // output/MagicItem/index.js
-  var toNodeArray6 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
-  var toNodeArray14 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
-  var span2 = /* @__PURE__ */ span(toNodeArray6)(toNodeArray14);
-  var div8 = /* @__PURE__ */ div3(toNodeArray6)(toNodeArray14);
+  var getValue7 = /* @__PURE__ */ getValue(valueableMimicSpell);
+  var getValue14 = /* @__PURE__ */ getValue(valueableReplicateItem);
+  var toNodeArray6 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div13 = /* @__PURE__ */ div3(/* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData))(toNodeArray6);
   var class$prime7 = /* @__PURE__ */ class$prime(toClassListString);
   var append4 = /* @__PURE__ */ append(semigroupArray);
-  var mkSelect7 = /* @__PURE__ */ mkSelect(showRarity)(eqRarity);
-  var fromString7 = /* @__PURE__ */ fromString2(fromStringRarity);
-  var getAll7 = /* @__PURE__ */ getAll(enumerableRarity);
-  var getValue7 = /* @__PURE__ */ getValue(valueableRarity);
+  var mkSelect7 = /* @__PURE__ */ mkSelect(showMimicSpell)(eqMimicSpell);
+  var fromString7 = /* @__PURE__ */ fromString2(fromStringMimicSpell);
+  var getAll7 = /* @__PURE__ */ getAll(enumerableMimicSpell);
+  var mkSelect14 = /* @__PURE__ */ mkSelect(showReplicateItem)(eqReplicateItem);
+  var fromString14 = /* @__PURE__ */ fromString2(fromStringReplicateItem);
+  var getAll14 = /* @__PURE__ */ getAll(enumerableReplicateItem);
+  var mkSelect23 = /* @__PURE__ */ mkSelect(showRarity)(eqRarity);
+  var fromString23 = /* @__PURE__ */ fromString2(fromStringRarity);
+  var getAll23 = /* @__PURE__ */ getAll(enumerableRarity);
+  var getValue23 = /* @__PURE__ */ getValue(valueableRarity);
   var h3_4 = /* @__PURE__ */ h3_(toNodeStringHtml);
-  var small_2 = /* @__PURE__ */ small_(toNodeArray14);
-  var RINo = /* @__PURE__ */ function() {
-    function RINo2() {
-    }
-    ;
-    RINo2.value = new RINo2();
-    return RINo2;
-  }();
-  var YesNoAccess = /* @__PURE__ */ function() {
-    function YesNoAccess2() {
-    }
-    ;
-    YesNoAccess2.value = new YesNoAccess2();
-    return YesNoAccess2;
-  }();
-  var YesNotActive = /* @__PURE__ */ function() {
-    function YesNotActive2() {
-    }
-    ;
-    YesNotActive2.value = new YesNotActive2();
-    return YesNotActive2;
-  }();
-  var YesActive = /* @__PURE__ */ function() {
-    function YesActive2() {
-    }
-    ;
-    YesActive2.value = new YesActive2();
-    return YesActive2;
-  }();
-  var No = /* @__PURE__ */ function() {
-    function No2() {
-    }
-    ;
-    No2.value = new No2();
-    return No2;
-  }();
-  var YesButNoAccess = /* @__PURE__ */ function() {
-    function YesButNoAccess2() {
-    }
-    ;
-    YesButNoAccess2.value = new YesButNoAccess2();
-    return YesButNoAccess2;
-  }();
-  var Cast1 = /* @__PURE__ */ function() {
-    function Cast12() {
-    }
-    ;
-    Cast12.value = new Cast12();
-    return Cast12;
-  }();
-  var Cast2 = /* @__PURE__ */ function() {
-    function Cast22() {
-    }
-    ;
-    Cast22.value = new Cast22();
-    return Cast22;
-  }();
-  var Cast3 = /* @__PURE__ */ function() {
-    function Cast32() {
-    }
-    ;
-    Cast32.value = new Cast32();
-    return Cast32;
-  }();
-  var Cast4 = /* @__PURE__ */ function() {
-    function Cast42() {
-    }
-    ;
-    Cast42.value = new Cast42();
-    return Cast42;
-  }();
-  var Cast5 = /* @__PURE__ */ function() {
-    function Cast52() {
-    }
-    ;
-    Cast52.value = new Cast52();
-    return Cast52;
-  }();
-  var Cast6 = /* @__PURE__ */ function() {
-    function Cast62() {
-    }
-    ;
-    Cast62.value = new Cast62();
-    return Cast62;
-  }();
-  var Cast7 = /* @__PURE__ */ function() {
-    function Cast72() {
-    }
-    ;
-    Cast72.value = new Cast72();
-    return Cast72;
-  }();
+  var small_2 = /* @__PURE__ */ small_(toNodeArray6);
   var ChangeRarity = /* @__PURE__ */ function() {
-    function ChangeRarity2(value0) {
+    function ChangeRarity3(value0) {
       this.value0 = value0;
     }
     ;
-    ChangeRarity2.create = function(value0) {
-      return new ChangeRarity2(value0);
+    ChangeRarity3.create = function(value0) {
+      return new ChangeRarity3(value0);
     };
-    return ChangeRarity2;
+    return ChangeRarity3;
   }();
   var ChangeMimicSpell = /* @__PURE__ */ function() {
-    function ChangeMimicSpell2(value0) {
+    function ChangeMimicSpell3(value0) {
       this.value0 = value0;
     }
     ;
-    ChangeMimicSpell2.create = function(value0) {
-      return new ChangeMimicSpell2(value0);
+    ChangeMimicSpell3.create = function(value0) {
+      return new ChangeMimicSpell3(value0);
     };
-    return ChangeMimicSpell2;
+    return ChangeMimicSpell3;
   }();
   var ChangeSpellCount = /* @__PURE__ */ function() {
-    function ChangeSpellCount2(value0) {
+    function ChangeSpellCount3(value0) {
       this.value0 = value0;
     }
     ;
-    ChangeSpellCount2.create = function(value0) {
-      return new ChangeSpellCount2(value0);
+    ChangeSpellCount3.create = function(value0) {
+      return new ChangeSpellCount3(value0);
     };
-    return ChangeSpellCount2;
+    return ChangeSpellCount3;
   }();
   var ChangeAccessToInstance = /* @__PURE__ */ function() {
-    function ChangeAccessToInstance2(value0) {
+    function ChangeAccessToInstance4(value0) {
       this.value0 = value0;
     }
     ;
-    ChangeAccessToInstance2.create = function(value0) {
-      return new ChangeAccessToInstance2(value0);
+    ChangeAccessToInstance4.create = function(value0) {
+      return new ChangeAccessToInstance4(value0);
     };
-    return ChangeAccessToInstance2;
+    return ChangeAccessToInstance4;
   }();
   var ChangeReplication = /* @__PURE__ */ function() {
     function ChangeReplication2(value0) {
@@ -4844,208 +5156,6 @@
     };
     return ChangeReplication2;
   }();
-  var valueableReplicateItem = {
-    getValue: function(v) {
-      if (v instanceof RINo) {
-        return 0;
-      }
-      ;
-      if (v instanceof YesNoAccess) {
-        return 0;
-      }
-      ;
-      if (v instanceof YesNotActive) {
-        return 0.1;
-      }
-      ;
-      if (v instanceof YesActive) {
-        return 0.25;
-      }
-      ;
-      throw new Error("Failed pattern match at MagicItem (line 94, column 1 - line 98, column 31): " + [v.constructor.name]);
-    }
-  };
-  var getValue14 = /* @__PURE__ */ getValue(valueableReplicateItem);
-  var valueableMimicSpell = {
-    getValue: function(v) {
-      if (v instanceof No) {
-        return 0;
-      }
-      ;
-      if (v instanceof YesButNoAccess) {
-        return 1;
-      }
-      ;
-      if (v instanceof Cast1) {
-        return 2;
-      }
-      ;
-      if (v instanceof Cast2) {
-        return 3;
-      }
-      ;
-      if (v instanceof Cast3) {
-        return 4;
-      }
-      ;
-      if (v instanceof Cast4) {
-        return 5;
-      }
-      ;
-      if (v instanceof Cast5) {
-        return 6;
-      }
-      ;
-      if (v instanceof Cast6) {
-        return 7;
-      }
-      ;
-      if (v instanceof Cast7) {
-        return 8;
-      }
-      ;
-      throw new Error("Failed pattern match at MagicItem (line 59, column 1 - line 68, column 32): " + [v.constructor.name]);
-    }
-  };
-  var getValue23 = /* @__PURE__ */ getValue(valueableMimicSpell);
-  var showReplicateItem = {
-    show: function(v) {
-      if (v instanceof RINo) {
-        return "No";
-      }
-      ;
-      if (v instanceof YesNoAccess) {
-        return "Yes, but cast has no access to it";
-      }
-      ;
-      if (v instanceof YesNotActive) {
-        return "Yes, but it is not active";
-      }
-      ;
-      if (v instanceof YesActive) {
-        return "Yes, and it is active";
-      }
-      ;
-      throw new Error("Failed pattern match at MagicItem (line 81, column 1 - line 85, column 43): " + [v.constructor.name]);
-    }
-  };
-  var showMimicSpell = {
-    show: function(v) {
-      if (v instanceof No) {
-        return "No";
-      }
-      ;
-      if (v instanceof YesButNoAccess) {
-        return "Yes, but crafter has no access to it";
-      }
-      ;
-      if (v instanceof Cast1) {
-        return "Cast 1 time per week";
-      }
-      ;
-      if (v instanceof Cast2) {
-        return "Cast 2 times per week";
-      }
-      ;
-      if (v instanceof Cast3) {
-        return "Cast 3 times per week";
-      }
-      ;
-      if (v instanceof Cast4) {
-        return "Cast 4 times per week";
-      }
-      ;
-      if (v instanceof Cast5) {
-        return "Cast 5 times per week";
-      }
-      ;
-      if (v instanceof Cast6) {
-        return "Cast 6 times per week";
-      }
-      ;
-      if (v instanceof Cast7) {
-        return "Cast 7 times per week";
-      }
-      ;
-      throw new Error("Failed pattern match at MagicItem (line 36, column 1 - line 45, column 48): " + [v.constructor.name]);
-    }
-  };
-  var fromStringReplicateItem = {
-    fromString: function(v) {
-      if (v === "No") {
-        return RINo.value;
-      }
-      ;
-      if (v === "Yes, but cast has no access to it") {
-        return YesNoAccess.value;
-      }
-      ;
-      if (v === "Yes, but it is not active") {
-        return YesNotActive.value;
-      }
-      ;
-      if (v === "Yes, and it is active") {
-        return YesActive.value;
-      }
-      ;
-      return RINo.value;
-    }
-  };
-  var fromString14 = /* @__PURE__ */ fromString2(fromStringReplicateItem);
-  var fromStringMimicSpell = {
-    fromString: function(v) {
-      if (v === "No") {
-        return No.value;
-      }
-      ;
-      if (v === "Yes, but crafter has no access to it") {
-        return YesButNoAccess.value;
-      }
-      ;
-      if (v === "Cast 1 time per week") {
-        return Cast1.value;
-      }
-      ;
-      if (v === "Cast 2 times per week") {
-        return Cast2.value;
-      }
-      ;
-      if (v === "Cast 3 times per week") {
-        return Cast3.value;
-      }
-      ;
-      if (v === "Cast 4 times per week") {
-        return Cast4.value;
-      }
-      ;
-      if (v === "Cast 5 times per week") {
-        return Cast5.value;
-      }
-      ;
-      if (v === "Cast 6 times per week") {
-        return Cast6.value;
-      }
-      ;
-      if (v === "Cast 7 times per week") {
-        return Cast7.value;
-      }
-      ;
-      return No.value;
-    }
-  };
-  var fromString23 = /* @__PURE__ */ fromString2(fromStringMimicSpell);
-  var enumerableReplicateItem = /* @__PURE__ */ function() {
-    return {
-      getAll: [RINo.value, YesNoAccess.value, YesNotActive.value, YesActive.value]
-    };
-  }();
-  var getAll14 = /* @__PURE__ */ getAll(enumerableReplicateItem);
-  var enumerableMimicSpell = /* @__PURE__ */ function() {
-    return {
-      getAll: [No.value, YesButNoAccess.value, Cast1.value, Cast2.value, Cast3.value, Cast4.value, Cast5.value, Cast6.value, Cast7.value]
-    };
-  }();
-  var getAll23 = /* @__PURE__ */ getAll(enumerableMimicSpell);
   var update5 = function(v) {
     return function(v1) {
       if (v1 instanceof ChangeRarity) {
@@ -5098,42 +5208,20 @@
         };
       }
       ;
-      throw new Error("Failed pattern match at MagicItem (line 125, column 1 - line 125, column 36): " + [v.constructor.name, v1.constructor.name]);
+      throw new Error("Failed pattern match at MagicItem (line 43, column 1 - line 43, column 36): " + [v.constructor.name, v1.constructor.name]);
     };
-  };
-  var tooltipCaption = function(tooltip) {
-    return function(caption) {
-      return span2([createAttribute("data-tooltip")(tooltip)])([text(caption)]);
-    };
-  };
-  var mkRow6 = function(caption) {
-    return function(content) {
-      return [div8([class$prime7("s6")])([caption]), div8([class$prime7("s6")])([content])];
-    };
-  };
-  var mimicMessage = "Reduce the time required by a multiplying by ((56 - (number of spells mimic'd * number of times cast per week))/56)";
-  var isUncommon = function(v) {
-    if (v instanceof Common) {
-      return true;
-    }
-    ;
-    if (v instanceof Uncommon) {
-      return true;
-    }
-    ;
-    return false;
   };
   var timeMultiplier = function(isMagicAdept) {
     return function(state2) {
       var uncommon = function() {
-        var $72 = isUncommon(state2.itemRarity) && isMagicAdept;
-        if ($72) {
+        var $44 = isUncommon(state2.itemRarity) && isMagicAdept;
+        if ($44) {
           return 0.25;
         }
         ;
         return 1;
       }();
-      var mimic = (56 - toNumber(state2.spellCount) * getValue23(state2.mimicSpell)) / 56;
+      var mimic = (56 - toNumber(state2.spellCount) * getValue7(state2.mimicSpell)) / 56;
       var access = function() {
         if (state2.accessToInstance) {
           return 0.1;
@@ -5144,6 +5232,12 @@
       return mimic * uncommon - access - getValue14(state2.replication);
     };
   };
+  var mkRow6 = function(caption) {
+    return function(content) {
+      return [div13([class$prime7("s6")])([caption]), div13([class$prime7("s6")])([content])];
+    };
+  };
+  var mimicMessage = "Reduce the time required by a multiplying by ((56 - (number of spells mimic'd * number of times cast per week))/56)";
   var init5 = /* @__PURE__ */ function() {
     return {
       itemRarity: Common.value,
@@ -5154,78 +5248,10 @@
     };
   }();
   var identicalMessage = "If crafter has access to an identical item, reduce the crafting time required by 10%";
-  var eqReplicateItem = {
-    eq: function(x) {
-      return function(y) {
-        if (x instanceof RINo && y instanceof RINo) {
-          return true;
-        }
-        ;
-        if (x instanceof YesNoAccess && y instanceof YesNoAccess) {
-          return true;
-        }
-        ;
-        if (x instanceof YesNotActive && y instanceof YesNotActive) {
-          return true;
-        }
-        ;
-        if (x instanceof YesActive && y instanceof YesActive) {
-          return true;
-        }
-        ;
-        return false;
-      };
-    }
-  };
-  var mkSelect14 = /* @__PURE__ */ mkSelect(showReplicateItem)(eqReplicateItem);
-  var eqMimicSpell = {
-    eq: function(x) {
-      return function(y) {
-        if (x instanceof No && y instanceof No) {
-          return true;
-        }
-        ;
-        if (x instanceof YesButNoAccess && y instanceof YesButNoAccess) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast1 && y instanceof Cast1) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast2 && y instanceof Cast2) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast3 && y instanceof Cast3) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast4 && y instanceof Cast4) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast5 && y instanceof Cast5) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast6 && y instanceof Cast6) {
-          return true;
-        }
-        ;
-        if (x instanceof Cast7 && y instanceof Cast7) {
-          return true;
-        }
-        ;
-        return false;
-      };
-    }
-  };
-  var mkSelect23 = /* @__PURE__ */ mkSelect(showMimicSpell)(eqMimicSpell);
   var viewSpellCasting = function(state2) {
-    return append4(mkRow6(tooltipCaption(mimicMessage)("Does item mimic a spell:"))(mkSelect23("casting")(function(s) {
-      return new ChangeMimicSpell(fromString23(s));
-    })(getAll23)(new Just(state2.mimicSpell))))(append4(mkRow6(tooltipCaption(mimicMessage)("Number of mimic'd spells:"))(mkNumber("spell-count")(ChangeSpellCount.create)(state2.spellCount)))(append4(mkRow6(tooltipCaption(identicalMessage)("Access to identical item:"))(mkCheckbox("identical-item")(ChangeAccessToInstance.create)(state2.accessToInstance)))(mkRow6(text("Can Replicate this item:"))(mkSelect14("replication")(function(s) {
+    return append4(mkRow6(tooltipCaption(mimicMessage)("Does item mimic a spell:"))(mkSelect7("casting")(function(s) {
+      return new ChangeMimicSpell(fromString7(s));
+    })(getAll7)(new Just(state2.mimicSpell))))(append4(mkRow6(tooltipCaption(mimicMessage)("Number of mimic'd spells:"))(mkNumber("spell-count")(ChangeSpellCount.create)(state2.spellCount)))(append4(mkRow6(tooltipCaption(identicalMessage)("Access to identical item:"))(mkCheckbox("identical-item")(ChangeAccessToInstance.create)(state2.accessToInstance)))(mkRow6(text("Can Replicate this item:"))(mkSelect14("replication")(function(s) {
       return new ChangeReplication(fromString14(s));
     })(getAll14)(new Just(state2.replication))))));
   };
@@ -5238,14 +5264,14 @@
       return "Yes";
     }
     ;
-    throw new Error("Failed pattern match at MagicItem (line 214, column 1 - line 214, column 31): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at MagicItem (line 124, column 1 - line 124, column 31): " + [v.constructor.name]);
   };
   var adeptTooltip = "If the crafter is a magic item adept, and the item is Uncommon or Common, divide the Base Enchantment Cost by 2 and the Base Enchantment Time by 4. Use these totals for the rest of the worksheet before applying any other modifiers";
   var viewRarity2 = function(isMagicItemAdept) {
     return function(state2) {
-      return append4(mkRow6(text("Item Rarity:"))(mkSelect7("rarity")(function(s) {
-        return new ChangeRarity(fromString7(s));
-      })(getAll7)(new Just(state2.itemRarity))))(append4(mkRow6(text("Base Cost:"))(text(showGPs(getValue7(state2.itemRarity)))))(append4(mkRow6(tooltipCaption(adeptTooltip)("Magic Item Adept:"))(text(boolToStr(isMagicItemAdept))))(mkRow6(tooltipCaption(adeptTooltip)("Common/Uncommon:"))(text(boolToStr(isUncommon(state2.itemRarity)))))));
+      return append4(mkRow6(text("Item Rarity:"))(mkSelect23("rarity")(function(s) {
+        return new ChangeRarity(fromString23(s));
+      })(getAll23)(new Just(state2.itemRarity))))(append4(mkRow6(text("Base Cost:"))(text(showGPs(getValue23(state2.itemRarity)))))(append4(mkRow6(tooltipCaption(adeptTooltip)("Magic Item Adept:"))(text(boolToStr(isMagicItemAdept))))(mkRow6(tooltipCaption(adeptTooltip)("Common/Uncommon:"))(text(boolToStr(isUncommon(state2.itemRarity)))))));
     };
   };
   var view5 = function(craftingOutputPerWeek) {
@@ -5254,19 +5280,19 @@
         return function(isMagicItemAdept) {
           return function(state2) {
             var timeMult = timeMultiplier(isMagicItemAdept)(state2);
-            var baseCost = getValue7(state2.itemRarity);
+            var baseCost = getValue23(state2.itemRarity);
             var baseTime = baseCost / craftingOutputPerWeek;
             var baseWeeks = baseTime * timeMult - componentReduction;
             var weeksNeeded = function() {
-              var $79 = baseWeeks < 0;
-              if ($79) {
+              var $47 = baseWeeks < 0;
+              if ($47) {
                 return 0;
               }
               ;
               return baseWeeks;
             }();
             var asstCost = baseCost / 10 + assistantCostPerWeek * weeksNeeded;
-            return div8([class$prime7("grid")])([div8([class$prime7("s6")])([div8([class$prime7("grid")])(viewRarity2(isMagicItemAdept)(state2))]), div8([class$prime7("s6")])([div8([class$prime7("grid")])(viewSpellCasting(state2))]), div8([class$prime7("s12")])([h3_4("Time and Cost")]), div8([class$prime7("s3")])([text("Base Time (weeks)")]), div8([class$prime7("s3")])([text(showWeeks(baseTime))]), div8([class$prime7("s6")])([small_2([text("Base Cost / Effective Crafting Output")])]), div8([class$prime7("s3")])([text("Time multiplier")]), div8([class$prime7("s3")])([text(toStringWith(fixed(3))(timeMult))]), div8([class$prime7("s6")])([small_2([text("Spell mimic adjustment * Artificer Common/Uncommon multiplier - Access to identical item bonus - Replicate Item bonus")])]), div8([class$prime7("s3")])([text("Time required (weeks)")]), div8([class$prime7("s3")])([text(showWeeks(weeksNeeded))]), div8([class$prime7("s6")])([small_2([text("Base Time * Time Multiplier - Component Time Reduction (Minimum 0)")])]), div8([class$prime7("s3")])([text("Time required (hours)")]), div8([class$prime7("s3")])([text(showHours(weeksNeeded))]), div8([class$prime7("s6")])([small_2([text("Time required (weeks) * 56")])]), div8([class$prime7("s3")])([text("Cost")]), div8([class$prime7("s3")])([text(showGPs(asstCost))]), div8([class$prime7("s6")])([small_2([text("Base Cost / 10 + Assistant Cost * Time (weeks)")])])]);
+            return div13([class$prime7("grid")])([div13([class$prime7("s6")])([div13([class$prime7("grid")])(viewRarity2(isMagicItemAdept)(state2))]), div13([class$prime7("s6")])([div13([class$prime7("grid")])(viewSpellCasting(state2))]), div13([class$prime7("s12")])([h3_4("Time and Cost")]), div13([class$prime7("s3")])([text("Base Time (weeks)")]), div13([class$prime7("s3")])([text(showWeeks(baseTime))]), div13([class$prime7("s6")])([small_2([text("Base Cost / Effective Crafting Output")])]), div13([class$prime7("s3")])([text("Time multiplier")]), div13([class$prime7("s3")])([text(toStringWith(fixed(3))(timeMult))]), div13([class$prime7("s6")])([small_2([text("Spell mimic adjustment * Artificer Common/Uncommon multiplier - Access to identical item bonus - Replicate Item bonus")])]), div13([class$prime7("s3")])([text("Time required (weeks)")]), div13([class$prime7("s3")])([text(showWeeks(weeksNeeded))]), div13([class$prime7("s6")])([small_2([text("Base Time * Time Multiplier - Component Time Reduction (Minimum 0)")])]), div13([class$prime7("s3")])([text("Time required (hours)")]), div13([class$prime7("s3")])([text(showHours(weeksNeeded))]), div13([class$prime7("s6")])([small_2([text("Time required (weeks) * 56")])]), div13([class$prime7("s3")])([text("Cost")]), div13([class$prime7("s3")])([text(showGPs(asstCost))]), div13([class$prime7("s6")])([small_2([text("Base Cost / 10 + Assistant Cost * Time (weeks)")])])]);
           };
         };
       };
@@ -5274,62 +5300,586 @@
   };
 
   // output/Potion/index.js
-  var view6 = function(output) {
-    return function(reduction) {
-      return function(asstCost) {
-        return function(state2) {
-          return text(state2.name + " : Not done yet");
+  var getValue8 = /* @__PURE__ */ getValue(valueableMimicSpell);
+  var toNodeArray7 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div14 = /* @__PURE__ */ div3(/* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData))(toNodeArray7);
+  var class$prime8 = /* @__PURE__ */ class$prime(toClassListString);
+  var append5 = /* @__PURE__ */ append(semigroupArray);
+  var mkSelect8 = /* @__PURE__ */ mkSelect(showMimicSpell)(eqMimicSpell);
+  var fromString8 = /* @__PURE__ */ fromString2(fromStringMimicSpell);
+  var getAll8 = /* @__PURE__ */ getAll(enumerableMimicSpell);
+  var mkSelect15 = /* @__PURE__ */ mkSelect(showRarity)(eqRarity);
+  var fromString15 = /* @__PURE__ */ fromString2(fromStringRarity);
+  var getAll15 = /* @__PURE__ */ getAll(enumerableRarity);
+  var getValue15 = /* @__PURE__ */ getValue(valueableRarity);
+  var h3_5 = /* @__PURE__ */ h3_(toNodeStringHtml);
+  var small_3 = /* @__PURE__ */ small_(toNodeArray7);
+  var ChangeRarity2 = /* @__PURE__ */ function() {
+    function ChangeRarity3(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeRarity3.create = function(value0) {
+      return new ChangeRarity3(value0);
+    };
+    return ChangeRarity3;
+  }();
+  var ChangeMimicSpell2 = /* @__PURE__ */ function() {
+    function ChangeMimicSpell3(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeMimicSpell3.create = function(value0) {
+      return new ChangeMimicSpell3(value0);
+    };
+    return ChangeMimicSpell3;
+  }();
+  var ChangeSpellCount2 = /* @__PURE__ */ function() {
+    function ChangeSpellCount3(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeSpellCount3.create = function(value0) {
+      return new ChangeSpellCount3(value0);
+    };
+    return ChangeSpellCount3;
+  }();
+  var ChangeAccessToInstance2 = /* @__PURE__ */ function() {
+    function ChangeAccessToInstance4(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeAccessToInstance4.create = function(value0) {
+      return new ChangeAccessToInstance4(value0);
+    };
+    return ChangeAccessToInstance4;
+  }();
+  var update6 = function(v) {
+    return function(v1) {
+      if (v1 instanceof ChangeRarity2) {
+        return {
+          mimicSpell: v.mimicSpell,
+          spellCount: v.spellCount,
+          accessToInstance: v.accessToInstance,
+          rarity: v1.value0
         };
-      };
+      }
+      ;
+      if (v1 instanceof ChangeMimicSpell2) {
+        return {
+          rarity: v.rarity,
+          spellCount: v.spellCount,
+          accessToInstance: v.accessToInstance,
+          mimicSpell: v1.value0
+        };
+      }
+      ;
+      if (v1 instanceof ChangeSpellCount2) {
+        return {
+          rarity: v.rarity,
+          mimicSpell: v.mimicSpell,
+          accessToInstance: v.accessToInstance,
+          spellCount: v1.value0
+        };
+      }
+      ;
+      if (v1 instanceof ChangeAccessToInstance2) {
+        return {
+          rarity: v.rarity,
+          mimicSpell: v.mimicSpell,
+          spellCount: v.spellCount,
+          accessToInstance: v1.value0
+        };
+      }
+      ;
+      throw new Error("Failed pattern match at Potion (line 42, column 1 - line 42, column 36): " + [v.constructor.name, v1.constructor.name]);
     };
   };
-  var update6 = function(state2) {
-    return function(v) {
-      return state2;
+  var timeMultiplier2 = function(isMagicAdept) {
+    return function(state2) {
+      var uncommon = function() {
+        var $37 = isUncommon(state2.rarity) && isMagicAdept;
+        if ($37) {
+          return 0.25;
+        }
+        ;
+        return 1;
+      }();
+      var mimic = (56 - toNumber(state2.spellCount) * getValue8(state2.mimicSpell)) / 56;
+      var access = function() {
+        if (state2.accessToInstance) {
+          return 0.1;
+        }
+        ;
+        return 0;
+      }();
+      return mimic * uncommon - access;
     };
   };
+  var mkRow7 = function(caption) {
+    return function(content) {
+      return [div14([class$prime8("s6")])([caption]), div14([class$prime8("s6")])([content])];
+    };
+  };
+  var mimicMessage2 = "Reduce the time required by a multiplying by ((56 - (number of spells mimic'd * number of times cast per week))/56)";
   var init6 = /* @__PURE__ */ function() {
     return {
-      name: show(showTabs)(TabPotion.value)
+      rarity: Common.value,
+      mimicSpell: No.value,
+      spellCount: 0,
+      accessToInstance: false
     };
   }();
-
-  // output/Scroll/index.js
-  var view7 = function(output) {
-    return function(reduction) {
-      return function(asstCost) {
+  var identicalMessage2 = "If crafter has access to an identical item, reduce the crafting time required by 10%";
+  var viewSpellCasting2 = function(state2) {
+    return append5(mkRow7(tooltipCaption(mimicMessage2)("Does item mimic a spell:"))(mkSelect8("casting")(function(s) {
+      return new ChangeMimicSpell2(fromString8(s));
+    })(getAll8)(new Just(state2.mimicSpell))))(append5(mkRow7(tooltipCaption(mimicMessage2)("Number of mimic'd spells:"))(mkNumber("spell-count")(ChangeSpellCount2.create)(state2.spellCount)))(mkRow7(tooltipCaption(identicalMessage2)("Access to identical item:"))(mkCheckbox("identical-item")(ChangeAccessToInstance2.create)(state2.accessToInstance))));
+  };
+  var boolToStr2 = function(v) {
+    if (!v) {
+      return "No";
+    }
+    ;
+    if (v) {
+      return "Yes";
+    }
+    ;
+    throw new Error("Failed pattern match at Potion (line 122, column 1 - line 122, column 31): " + [v.constructor.name]);
+  };
+  var adeptTooltip2 = "If the crafter is a magic item adept, and the item is Uncommon or Common, divide the Base Enchantment Cost by 2 and the Base Enchantment Time by 4. Use these totals for the rest of the worksheet before applying any other modifiers";
+  var viewRarity3 = function(isMagicItemAdept) {
+    return function(state2) {
+      return append5(mkRow7(text("Item Rarity:"))(mkSelect15("rarity")(function(s) {
+        return new ChangeRarity2(fromString15(s));
+      })(getAll15)(new Just(state2.rarity))))(append5(mkRow7(text("Base Cost:"))(text(showGPs(getValue15(state2.rarity)))))(append5(mkRow7(tooltipCaption(adeptTooltip2)("Magic Item Adept:"))(text(boolToStr2(isMagicItemAdept))))(mkRow7(tooltipCaption(adeptTooltip2)("Common/Uncommon:"))(text(boolToStr2(isUncommon(state2.rarity)))))));
+    };
+  };
+  var view6 = function(craftingOutputPerWeek) {
+    return function(assistantCostPerWeek) {
+      return function(isMagicItemAdept) {
         return function(state2) {
-          return text(state2.name + " : Not done yet");
+          var timeMult = timeMultiplier2(isMagicItemAdept)(state2);
+          var baseCost = getValue15(state2.rarity);
+          var baseTime = baseCost / (craftingOutputPerWeek * 2);
+          var baseWeeks = baseTime * timeMult;
+          var weeksNeeded = function() {
+            var $40 = baseWeeks < 0;
+            if ($40) {
+              return 0;
+            }
+            ;
+            return baseWeeks;
+          }();
+          var asstCost = baseCost / 10 + assistantCostPerWeek * weeksNeeded;
+          return div14([class$prime8("grid")])([div14([class$prime8("s6")])([div14([class$prime8("grid")])(viewRarity3(isMagicItemAdept)(state2))]), div14([class$prime8("s6")])([div14([class$prime8("grid")])(viewSpellCasting2(state2))]), div14([class$prime8("s12")])([h3_5("Time and Cost")]), div14([class$prime8("s3")])([text("Base Time (weeks)")]), div14([class$prime8("s3")])([text(showWeeks(baseTime))]), div14([class$prime8("s6")])([small_3([text("Base Cost / (2 * Effective Crafting Output)")])]), div14([class$prime8("s3")])([text("Time multiplier")]), div14([class$prime8("s3")])([text(toStringWith(fixed(3))(timeMult))]), div14([class$prime8("s6")])([small_3([text("Spell mimic adjustment * Artificer Common/Uncommon multiplier - Access to identical item bonus")])]), div14([class$prime8("s3")])([text("Time required (weeks)")]), div14([class$prime8("s3")])([text(showWeeks(weeksNeeded))]), div14([class$prime8("s6")])([small_3([text("Base Time * Time Multiplier (Minimum 0)")])]), div14([class$prime8("s3")])([text("Time required (hours)")]), div14([class$prime8("s3")])([text(showHours(weeksNeeded))]), div14([class$prime8("s6")])([small_3([text("Time required (weeks) * 56")])]), div14([class$prime8("s3")])([text("Cost")]), div14([class$prime8("s3")])([text(showGPs(asstCost))]), div14([class$prime8("s6")])([small_3([text("Base Cost / 10 + Assistant Cost * Time (weeks)")])])]);
         };
       };
     };
   };
-  var update7 = function(state2) {
-    return function(v) {
-      return state2;
+
+  // output/Scroll/index.js
+  var toNodeArray8 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
+  var div8 = /* @__PURE__ */ div3(/* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData))(toNodeArray8);
+  var class$prime9 = /* @__PURE__ */ class$prime(toClassListString);
+  var append6 = /* @__PURE__ */ append(semigroupArray);
+  var getValue9 = /* @__PURE__ */ getValue(valueableRarity);
+  var h3_6 = /* @__PURE__ */ h3_(toNodeStringHtml);
+  var small_4 = /* @__PURE__ */ small_(toNodeArray8);
+  var Cantrip = /* @__PURE__ */ function() {
+    function Cantrip2() {
+    }
+    ;
+    Cantrip2.value = new Cantrip2();
+    return Cantrip2;
+  }();
+  var First2 = /* @__PURE__ */ function() {
+    function First3() {
+    }
+    ;
+    First3.value = new First3();
+    return First3;
+  }();
+  var Second = /* @__PURE__ */ function() {
+    function Second2() {
+    }
+    ;
+    Second2.value = new Second2();
+    return Second2;
+  }();
+  var Third = /* @__PURE__ */ function() {
+    function Third2() {
+    }
+    ;
+    Third2.value = new Third2();
+    return Third2;
+  }();
+  var Fourth = /* @__PURE__ */ function() {
+    function Fourth2() {
+    }
+    ;
+    Fourth2.value = new Fourth2();
+    return Fourth2;
+  }();
+  var Fifth = /* @__PURE__ */ function() {
+    function Fifth2() {
+    }
+    ;
+    Fifth2.value = new Fifth2();
+    return Fifth2;
+  }();
+  var Sixth = /* @__PURE__ */ function() {
+    function Sixth2() {
+    }
+    ;
+    Sixth2.value = new Sixth2();
+    return Sixth2;
+  }();
+  var Seventh = /* @__PURE__ */ function() {
+    function Seventh2() {
+    }
+    ;
+    Seventh2.value = new Seventh2();
+    return Seventh2;
+  }();
+  var Eighth = /* @__PURE__ */ function() {
+    function Eighth2() {
+    }
+    ;
+    Eighth2.value = new Eighth2();
+    return Eighth2;
+  }();
+  var Ninth = /* @__PURE__ */ function() {
+    function Ninth2() {
+    }
+    ;
+    Ninth2.value = new Ninth2();
+    return Ninth2;
+  }();
+  var ChangeSpellLevel = /* @__PURE__ */ function() {
+    function ChangeSpellLevel2(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeSpellLevel2.create = function(value0) {
+      return new ChangeSpellLevel2(value0);
+    };
+    return ChangeSpellLevel2;
+  }();
+  var ChangeAccessToInstance3 = /* @__PURE__ */ function() {
+    function ChangeAccessToInstance4(value0) {
+      this.value0 = value0;
+    }
+    ;
+    ChangeAccessToInstance4.create = function(value0) {
+      return new ChangeAccessToInstance4(value0);
+    };
+    return ChangeAccessToInstance4;
+  }();
+  var showSpellLevel = {
+    show: function(v) {
+      if (v instanceof Cantrip) {
+        return "Cantrip";
+      }
+      ;
+      if (v instanceof First2) {
+        return "First";
+      }
+      ;
+      if (v instanceof Second) {
+        return "Second";
+      }
+      ;
+      if (v instanceof Third) {
+        return "Third";
+      }
+      ;
+      if (v instanceof Fourth) {
+        return "Fourth";
+      }
+      ;
+      if (v instanceof Fifth) {
+        return "Fifth";
+      }
+      ;
+      if (v instanceof Sixth) {
+        return "Sixth";
+      }
+      ;
+      if (v instanceof Seventh) {
+        return "Seventh";
+      }
+      ;
+      if (v instanceof Eighth) {
+        return "Eighth";
+      }
+      ;
+      if (v instanceof Ninth) {
+        return "Ninth";
+      }
+      ;
+      throw new Error("Failed pattern match at Scroll (line 34, column 1 - line 44, column 25): " + [v.constructor.name]);
+    }
+  };
+  var fromStringSpellLevel = {
+    fromString: function(v) {
+      if (v === "Cantrip") {
+        return Cantrip.value;
+      }
+      ;
+      if (v === "First") {
+        return First2.value;
+      }
+      ;
+      if (v === "Second") {
+        return Second.value;
+      }
+      ;
+      if (v === "Third") {
+        return Third.value;
+      }
+      ;
+      if (v === "Fourth") {
+        return Fourth.value;
+      }
+      ;
+      if (v === "Fifth") {
+        return Fifth.value;
+      }
+      ;
+      if (v === "Sixth") {
+        return Sixth.value;
+      }
+      ;
+      if (v === "Seventh") {
+        return Seventh.value;
+      }
+      ;
+      if (v === "Eighth") {
+        return Eighth.value;
+      }
+      ;
+      if (v === "Ninth") {
+        return Ninth.value;
+      }
+      ;
+      return Cantrip.value;
+    }
+  };
+  var fromString9 = /* @__PURE__ */ fromString2(fromStringSpellLevel);
+  var enumerableSpellLevel = /* @__PURE__ */ function() {
+    return {
+      getAll: [Cantrip.value, First2.value, Second.value, Third.value, Fourth.value, Fifth.value, Sixth.value, Seventh.value, Eighth.value, Ninth.value]
+    };
+  }();
+  var getAll9 = /* @__PURE__ */ getAll(enumerableSpellLevel);
+  var update7 = function(v) {
+    return function(v1) {
+      if (v1 instanceof ChangeSpellLevel) {
+        return {
+          accessToInstance: v.accessToInstance,
+          spellLevel: v1.value0
+        };
+      }
+      ;
+      if (v1 instanceof ChangeAccessToInstance3) {
+        return {
+          spellLevel: v.spellLevel,
+          accessToInstance: v1.value0
+        };
+      }
+      ;
+      throw new Error("Failed pattern match at Scroll (line 75, column 1 - line 75, column 36): " + [v.constructor.name, v1.constructor.name]);
+    };
+  };
+  var spellLevelToRarity = function(v) {
+    if (v instanceof Cantrip) {
+      return Common.value;
+    }
+    ;
+    if (v instanceof First2) {
+      return Common.value;
+    }
+    ;
+    if (v instanceof Second) {
+      return Uncommon.value;
+    }
+    ;
+    if (v instanceof Third) {
+      return Uncommon.value;
+    }
+    ;
+    if (v instanceof Fourth) {
+      return Rare.value;
+    }
+    ;
+    if (v instanceof Fifth) {
+      return Rare.value;
+    }
+    ;
+    if (v instanceof Sixth) {
+      return VeryRare.value;
+    }
+    ;
+    if (v instanceof Seventh) {
+      return VeryRare.value;
+    }
+    ;
+    if (v instanceof Eighth) {
+      return VeryRare.value;
+    }
+    ;
+    if (v instanceof Ninth) {
+      return Legendary.value;
+    }
+    ;
+    throw new Error("Failed pattern match at Scroll (line 135, column 1 - line 135, column 43): " + [v.constructor.name]);
+  };
+  var timeMultiplier3 = function(isMagicAdept) {
+    return function(state2) {
+      var rarity = spellLevelToRarity(state2.spellLevel);
+      var uncommon = function() {
+        var $39 = isUncommon(rarity) && isMagicAdept;
+        if ($39) {
+          return 0.25;
+        }
+        ;
+        return 1;
+      }();
+      var access = function() {
+        if (state2.accessToInstance) {
+          return 0.1;
+        }
+        ;
+        return 0;
+      }();
+      return uncommon - access;
+    };
+  };
+  var mkRow8 = function(caption) {
+    return function(content) {
+      return [div8([class$prime9("s6")])([caption]), div8([class$prime9("s6")])([content])];
     };
   };
   var init7 = /* @__PURE__ */ function() {
     return {
-      name: show(showTabs)(TabScroll.value)
+      spellLevel: Cantrip.value,
+      accessToInstance: false
     };
   }();
+  var identicalMessage3 = "If crafter has access to an identical item, reduce the crafting time required by 10%";
+  var viewSpellCasting3 = function(state2) {
+    return mkRow8(tooltipCaption(identicalMessage3)("Access to identical item:"))(mkCheckbox("identical-item")(ChangeAccessToInstance3.create)(state2.accessToInstance));
+  };
+  var eqSpellLevel = {
+    eq: function(x) {
+      return function(y) {
+        if (x instanceof Cantrip && y instanceof Cantrip) {
+          return true;
+        }
+        ;
+        if (x instanceof First2 && y instanceof First2) {
+          return true;
+        }
+        ;
+        if (x instanceof Second && y instanceof Second) {
+          return true;
+        }
+        ;
+        if (x instanceof Third && y instanceof Third) {
+          return true;
+        }
+        ;
+        if (x instanceof Fourth && y instanceof Fourth) {
+          return true;
+        }
+        ;
+        if (x instanceof Fifth && y instanceof Fifth) {
+          return true;
+        }
+        ;
+        if (x instanceof Sixth && y instanceof Sixth) {
+          return true;
+        }
+        ;
+        if (x instanceof Seventh && y instanceof Seventh) {
+          return true;
+        }
+        ;
+        if (x instanceof Eighth && y instanceof Eighth) {
+          return true;
+        }
+        ;
+        if (x instanceof Ninth && y instanceof Ninth) {
+          return true;
+        }
+        ;
+        return false;
+      };
+    }
+  };
+  var mkSelect9 = /* @__PURE__ */ mkSelect(showSpellLevel)(eqSpellLevel);
+  var boolToStr3 = function(v) {
+    if (!v) {
+      return "No";
+    }
+    ;
+    if (v) {
+      return "Yes";
+    }
+    ;
+    throw new Error("Failed pattern match at Scroll (line 163, column 1 - line 163, column 31): " + [v.constructor.name]);
+  };
+  var adeptTooltip3 = "If the crafter is a magic item adept, and the item is Uncommon or Common, divide the Base Enchantment Cost by 2 and the Base Enchantment Time by 4. Use these totals for the rest of the worksheet before applying any other modifiers";
+  var viewRarity4 = function(isMagicItemAdept) {
+    return function(state2) {
+      var rarity = spellLevelToRarity(state2.spellLevel);
+      return append6(mkRow8(text("Item Rarity:"))(mkSelect9("rarity")(function(s) {
+        return new ChangeSpellLevel(fromString9(s));
+      })(getAll9)(new Just(state2.spellLevel))))(append6(mkRow8(text("Base Cost:"))(text(showGPs(getValue9(rarity)))))(append6(mkRow8(tooltipCaption(adeptTooltip3)("Magic Item Adept:"))(text(boolToStr3(isMagicItemAdept))))(mkRow8(tooltipCaption(adeptTooltip3)("Common/Uncommon:"))(text(boolToStr3(isUncommon(rarity)))))));
+    };
+  };
+  var view7 = function(craftingOutputPerWeek) {
+    return function(componentReduction) {
+      return function(assistantCostPerWeek) {
+        return function(isMagicItemAdept) {
+          return function(state2) {
+            var timeMult = timeMultiplier3(isMagicItemAdept)(state2);
+            var rarity = spellLevelToRarity(state2.spellLevel);
+            var baseCost = getValue9(rarity);
+            var baseTime = baseCost / (craftingOutputPerWeek * 2);
+            var baseWeeks = baseTime * timeMult - componentReduction;
+            var weeksNeeded = function() {
+              var $44 = baseWeeks < 0;
+              if ($44) {
+                return 0;
+              }
+              ;
+              return baseWeeks;
+            }();
+            var asstCost = baseCost / 10 + assistantCostPerWeek * weeksNeeded;
+            return div8([class$prime9("grid")])([div8([class$prime9("s6")])([div8([class$prime9("grid")])(viewRarity4(isMagicItemAdept)(state2))]), div8([class$prime9("s6")])([div8([class$prime9("grid")])(viewSpellCasting3(state2))]), div8([class$prime9("s12")])([h3_6("Time and Cost")]), div8([class$prime9("s3")])([text("Base Time (weeks)")]), div8([class$prime9("s3")])([text(showWeeks(baseTime))]), div8([class$prime9("s6")])([small_4([text("Base Cost / (2 * Effective Crafting Output)")])]), div8([class$prime9("s3")])([text("Time multiplier")]), div8([class$prime9("s3")])([text(toStringWith(fixed(3))(timeMult))]), div8([class$prime9("s6")])([small_4([text("Artificer Common/Uncommon multiplier - Access to identical item bonus")])]), div8([class$prime9("s3")])([text("Time required (weeks)")]), div8([class$prime9("s3")])([text(showWeeks(weeksNeeded))]), div8([class$prime9("s6")])([small_4([text("Base Time * Time Multiplier - Component Time Reduction (Minimum 0)")])]), div8([class$prime9("s3")])([text("Time required (hours)")]), div8([class$prime9("s3")])([text(showHours(weeksNeeded))]), div8([class$prime9("s6")])([small_4([text("Time required (weeks) * 56")])]), div8([class$prime9("s3")])([text("Cost")]), div8([class$prime9("s3")])([text(showGPs(asstCost))]), div8([class$prime9("s6")])([small_4([text("Base Cost / 10 + Assistant Cost * Time (weeks)")])])]);
+          };
+        };
+      };
+    };
+  };
 
   // output/Crafting/index.js
   var eq3 = /* @__PURE__ */ eq(eqTabs);
   var map9 = /* @__PURE__ */ map(functorHtml);
-  var toNodeArray7 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
+  var toNodeArray9 = /* @__PURE__ */ toNodeArray(toNodeNodeDataNodeData);
   var toNodeArray15 = /* @__PURE__ */ toNodeArray(toNodeHtmlHtml);
-  var div9 = /* @__PURE__ */ div3(toNodeArray7)(toNodeArray15);
-  var class$prime8 = /* @__PURE__ */ class$prime(toClassListString);
-  var button2 = /* @__PURE__ */ button(toNodeArray7)(toNodeArray15);
+  var div9 = /* @__PURE__ */ div3(toNodeArray9)(toNodeArray15);
+  var class$prime10 = /* @__PURE__ */ class$prime(toClassListString);
+  var button2 = /* @__PURE__ */ button(toNodeArray9)(toNodeArray15);
   var show7 = /* @__PURE__ */ show(showTabs);
   var main2 = /* @__PURE__ */ main(toNodeStringNodeData)(toNodeArray15);
   var h1_2 = /* @__PURE__ */ h1_(toNodeArray15);
   var article_4 = /* @__PURE__ */ article_(toNodeArray15);
-  var append5 = /* @__PURE__ */ append(semigroupArray);
+  var append7 = /* @__PURE__ */ append(semigroupArray);
   var map13 = /* @__PURE__ */ map(functorArray);
-  var getAll8 = /* @__PURE__ */ getAll(enumerableTabs);
+  var getAll10 = /* @__PURE__ */ getAll(enumerableTabs);
   var CraftingInputMessage = /* @__PURE__ */ function() {
     function CraftingInputMessage2(value0) {
       this.value0 = value0;
@@ -5543,20 +6093,20 @@
         }
         ;
         if (tab instanceof TabItemImprovement) {
-          return map9(ItemImprovementMessage.create)(view4(output)(reduction)(asstCost)(model.itemImprovement));
+          return map9(ItemImprovementMessage.create)(view4(output)(reduction)(asstCost)(model.craftingInputs.itemAdept)(model.itemImprovement));
         }
         ;
         if (tab instanceof TabPotion) {
-          return map9(PotionsMessage.create)(view6(output)(reduction)(asstCost)(model.potion));
+          return map9(PotionsMessage.create)(view6(output)(asstCost)(model.craftingInputs.itemAdept)(model.potion));
         }
         ;
         if (tab instanceof TabScroll) {
-          return map9(ScrollsMessage.create)(view7(output)(reduction)(asstCost)(model.scroll));
+          return map9(ScrollsMessage.create)(view7(output)(reduction)(asstCost)(model.craftingInputs.itemAdept)(model.scroll));
         }
         ;
-        throw new Error("Failed pattern match at Crafting (line 97, column 7 - line 102, column 86): " + [tab.constructor.name]);
+        throw new Error("Failed pattern match at Crafting (line 97, column 7 - line 102, column 92): " + [tab.constructor.name]);
       }();
-      return div9([class$prime8(classes)])([localview]);
+      return div9([class$prime10(classes)])([localview]);
     };
   };
   var mkTab = function(model) {
@@ -5569,11 +6119,11 @@
         ;
         return "inactive";
       }();
-      return button2([class$prime8(classes), onClick(new TabChange(tab)), selected(eq3(model.activeTab)(tab))])([text(show7(tab))]);
+      return button2([class$prime10(classes), onClick(new TabChange(tab)), selected(eq3(model.activeTab)(tab))])([text(show7(tab))]);
     };
   };
   var view8 = function(model) {
-    return main2("main")([h1_2([text("Crafting Calculator")]), article_4([map9(CraftingInputMessage.create)(view3(model.craftingInputs)), map9(ComponentsMessage.create)(view2(model.components)), article_4(append5([div9([class$prime8("tabs")])(map13(mkTab(model))(getAll8))])(map13(mkTabContent(model))(getAll8)))])]);
+    return main2("main")([h1_2([text("Crafting Calculator")]), article_4([map9(CraftingInputMessage.create)(view3(model.craftingInputs)), map9(ComponentsMessage.create)(view2(model.components)), article_4(append7([div9([class$prime10("tabs")])(map13(mkTab(model))(getAll10))])(map13(mkTabContent(model))(getAll10)))])]);
   };
   var init8 = /* @__PURE__ */ function() {
     return {

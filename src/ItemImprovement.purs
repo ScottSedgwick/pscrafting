@@ -18,7 +18,7 @@ import Flame.Html.Attribute as HA
 import Flame.Html.Element as HE
 
 import CommonCalculations (calcCostPrice, calcCraftingCost, calcCraftingTime)
-import Types (class Enumerable, class FromString, Rarity(..), fromString, getAll, getMaybeRarity)
+import Types (class Enumerable, class FromString, Rarity(..), fromString, getAll, getMaybeRarity, isUncommon)
 import UiFuncs (mkNumber, mkSelect, showGPs, showHours, showWeeks)
 
 data ValueUnits = UnitsGoldPieces
@@ -66,8 +66,8 @@ update state (FinalRarityChanged s)   = state { finalValue = Rarity (fromString 
 update state (InitialValueChanged n)  = state { initialValue = GoldPieces n }
 update state (FinalValueChanged n)    = state { finalValue = GoldPieces n } 
 
-view :: Number -> Number -> Number -> Model -> Html Message
-view output reduction asstCost state = 
+view :: Number -> Number -> Number -> Boolean -> Model -> Html Message
+view output reduction asstCost adept state = 
   let subview = case state.valueUnits of
                   UnitsGoldPieces -> viewGold
                   UnitsRarity     -> viewRarity
@@ -75,11 +75,11 @@ view output reduction asstCost state =
     HE.div [ HA.class' "grid"] 
     ( [ HE.div [ HA.class' "s3" ] [ HE.text "Value Units:" ]
       , HE.div [ HA.class' "s9" ] [ mkSelect "improvement-units" ValueUnitsChanged (getAll :: Array ValueUnits) (Just state.valueUnits) ]
-      ] <> subview output reduction asstCost state
+      ] <> subview output reduction asstCost adept state
     )
 
-viewGold :: Number -> Number -> Number -> Model -> Array (Html Message)
-viewGold output reduction asstCost state = 
+viewGold :: Number -> Number -> Number -> Boolean -> Model -> Array (Html Message)
+viewGold output reduction asstCost _ state = 
   let
     initVal   = getGPs state.initialValue
     finalVal  = getGPs state.finalValue
@@ -95,21 +95,26 @@ viewGold output reduction asstCost state =
     <> mkRow "Crafting Cost:"         ( HE.text (showGPs craftCost) )
     )
 
-viewRarity :: Number -> Number -> Number -> Model -> Array (Html Message)
-viewRarity output reduction asstCost state = 
+isMaybeUncommon :: Maybe Rarity -> Boolean
+isMaybeUncommon Nothing  = false
+isMaybeUncommon (Just r) = isUncommon r
+
+viewRarity :: Number -> Number -> Number -> Boolean -> Model -> Array (Html Message)
+viewRarity output reduction asstCost adept state = 
   let
     initRar   = getRarity state.initialValue
     finalRar  = getRarity state.finalValue
     initVal   = getMaybeRarity initRar
     finalVal  = getMaybeRarity finalRar
     basePrice = if ((finalVal - initVal) < 0.0) then 0 else round (finalVal - initVal)
-    costPrice = calcCostPrice basePrice
-    craftTime = calcCraftingTime basePrice output reduction
+    adjPrice  = if isMaybeUncommon finalRar then basePrice / 2 else basePrice
+    costPrice = calcCostPrice adjPrice
+    craftTime = calcCraftingTime adjPrice output reduction
     craftCost = calcCraftingCost costPrice craftTime asstCost
   in
     (  mkRow "Initial Rarity:"        ( mkSelect "initial-rarity" InitialRarityChanged (getAll :: Array Rarity) initRar )
     <> mkRow "Final Rarity:"          ( mkSelect "final-rarity" FinalRarityChanged (getAll :: Array Rarity) finalRar )
-    <> mkRow "Value Difference:"      ( HE.text (showGPs (toNumber basePrice)) )
+    <> mkRow "Value Difference:"      ( HE.text (showGPs (toNumber adjPrice)) )
     <> mkRow "Crafting Time (weeks):" ( HE.text (showWeeks craftTime) )
     <> mkRow "Crafting Time (hours):" ( HE.text (showHours craftTime) )
     <> mkRow "Crafting Cost:"         ( HE.text (showGPs craftCost) )

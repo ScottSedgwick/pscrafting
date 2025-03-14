@@ -113,7 +113,7 @@ viewSummary model =
   [
     HE.div [ HA.class' "grid" ] 
     [ HE.div [ HA.class' "s3" ] [ HE.text ("Crafting Output: " <> showGPs (totalInput model)) ]
-    , HE.div [ HA.class' "s3" ] [ HE.text ("Environment Multiplier: " <> show (environmentMultiplier model.environment)) ]
+    , HE.div [ HA.class' "s3" ] [ HE.text ("Environment Multiplier: x" <> show (environmentMultiplier model.environment)) ]
     , HE.div [ HA.class' "s3" ] [ HE.text ("Effective Output per week: " <> showGPs (effectiveOutput model)) ]
     , HE.div [ HA.class' "s3" ] [ HE.text ("Weekly cost: " <> (showGPs (weeklyCost model))) ]
     ]

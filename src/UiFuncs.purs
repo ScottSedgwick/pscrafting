@@ -34,3 +34,6 @@ showHours weeks = toStringWith (fixed 2) (weeks * 56.0)
 
 showWeeks :: Number -> String
 showWeeks weeks = toStringWith (fixed 3) weeks
+
+tooltipCaption :: forall a. String -> String -> Html a
+tooltipCaption tooltip caption = HE.span [ HA.createAttribute "data-tooltip" tooltip ] [ HE.text caption ]

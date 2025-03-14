@@ -97,9 +97,9 @@ mkTabContent model tab =
       case tab of
         TabBasicItem -> BasicItemMessage <$> BI.view output reduction asstCost model.basicItem
         TabMagicItem -> MagicItemMessage <$> MI.view output reduction asstCost adept model.magicItem
-        TabItemImprovement -> ItemImprovementMessage <$> II.view output reduction asstCost model.itemImprovement
-        TabPotion -> PotionsMessage <$> P.view output reduction asstCost model.potion
-        TabScroll -> ScrollsMessage <$> S.view output reduction asstCost model.scroll
+        TabItemImprovement -> ItemImprovementMessage <$> II.view output reduction asstCost adept model.itemImprovement
+        TabPotion -> PotionsMessage <$> P.view output asstCost adept model.potion
+        TabScroll -> ScrollsMessage <$> S.view output reduction asstCost adept model.scroll
   in
     HE.div [ HA.class' classes ]
     [ localview ]

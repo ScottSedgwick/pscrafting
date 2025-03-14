@@ -1,8 +1,6 @@
 module MagicItem 
   ( Message
   , Model
-  , MimicSpell
-  , ReplicateItem
   , init
   , update
   , view
@@ -17,88 +15,8 @@ import Data.Number.Format (fixed, toStringWith)
 import Flame (Html)
 import Flame.Html.Attribute as HA
 import Flame.Html.Element as HE
-import Types (class Enumerable, class FromString, class Valueable, Rarity(..), fromString, getAll, getValue)
-import UiFuncs (mkCheckbox, mkNumber, mkSelect, showGPs, showHours, showWeeks)
-
-data MimicSpell 
-  = No
-  | YesButNoAccess
-  | Cast1
-  | Cast2
-  | Cast3
-  | Cast4 
-  | Cast5
-  | Cast6
-  | Cast7
-
-derive instance eqMimicSpell :: Eq MimicSpell
-
-instance Show MimicSpell where
-  show No             = "No"
-  show YesButNoAccess = "Yes, but crafter has no access to it"
-  show Cast1          = "Cast 1 time per week"
-  show Cast2          = "Cast 2 times per week"
-  show Cast3          = "Cast 3 times per week"
-  show Cast4          = "Cast 4 times per week"
-  show Cast5          = "Cast 5 times per week"
-  show Cast6          = "Cast 6 times per week"
-  show Cast7          = "Cast 7 times per week"
-
-instance FromString MimicSpell where
-  fromString  "No"                                   = No
-  fromString  "Yes, but crafter has no access to it" = YesButNoAccess
-  fromString  "Cast 1 time per week"                 = Cast1
-  fromString  "Cast 2 times per week"                = Cast2
-  fromString  "Cast 3 times per week"                = Cast3
-  fromString  "Cast 4 times per week"                = Cast4
-  fromString  "Cast 5 times per week"                = Cast5
-  fromString  "Cast 6 times per week"                = Cast6
-  fromString  "Cast 7 times per week"                = Cast7
-  fromString _                                       = No
-
-instance Valueable MimicSpell where
-  getValue No             = 0.0
-  getValue YesButNoAccess = 1.0
-  getValue Cast1          = 2.0
-  getValue Cast2          = 3.0
-  getValue Cast3          = 4.0
-  getValue Cast4          = 5.0
-  getValue Cast5          = 6.0
-  getValue Cast6          = 7.0
-  getValue Cast7          = 8.0
-
-instance Enumerable MimicSpell where
-  getAll = [No, YesButNoAccess, Cast1, Cast2, Cast3, Cast4 , Cast5, Cast6, Cast7]
-
-data ReplicateItem 
-  = RINo
-  | YesNoAccess
-  | YesNotActive
-  | YesActive
-
-derive instance eqReplicateItem :: Eq ReplicateItem
-
-instance Show ReplicateItem where
-  show RINo = "No"
-  show YesNoAccess = "Yes, but cast has no access to it"
-  show YesNotActive = "Yes, but it is not active"
-  show YesActive = "Yes, and it is active"
-
-instance FromString ReplicateItem where
-  fromString "No" = RINo
-  fromString "Yes, but cast has no access to it" = YesNoAccess
-  fromString "Yes, but it is not active" = YesNotActive
-  fromString "Yes, and it is active" = YesActive
-  fromString _ = RINo
-
-instance Valueable ReplicateItem where
-  getValue RINo         = 0.0
-  getValue YesNoAccess  = 0.0
-  getValue YesNotActive = 0.1
-  getValue YesActive    = 0.25
-
-instance Enumerable ReplicateItem where
-  getAll = [RINo, YesNoAccess, YesNotActive, YesActive]
+import Types (MimicSpell(..), Rarity(..), ReplicateItem(..), fromString, getAll, getValue, isUncommon)
+import UiFuncs (mkCheckbox, mkNumber, mkSelect, showGPs, showHours, showWeeks, tooltipCaption)
 
 type Model =
   { itemRarity :: Rarity
@@ -194,9 +112,6 @@ viewSpellCasting state =
   <> mkRow (tooltipCaption identicalMessage "Access to identical item:") (mkCheckbox "identical-item" ChangeAccessToInstance state.accessToInstance)
   <> mkRow (HE.text "Can Replicate this item:")  (mkSelect "replication" (\s -> ChangeReplication (fromString s)) getAll (Just state.replication))
 
-tooltipCaption :: String -> String -> Html Message
-tooltipCaption tooltip caption = HE.span [ HA.createAttribute "data-tooltip" tooltip ] [ HE.text caption ]
-
 adeptTooltip :: String
 adeptTooltip = "If the crafter is a magic item adept, and the item is Uncommon or Common, divide the Base Enchantment Cost by 2 and the Base Enchantment Time by 4. Use these totals for the rest of the worksheet before applying any other modifiers"
 
@@ -205,11 +120,6 @@ mkRow caption content =
   [ HE.div [ HA.class' "s6" ] [ caption ]
   , HE.div [ HA.class' "s6" ] [ content ]
   ]
-
-isUncommon :: Rarity -> Boolean
-isUncommon Common   = true
-isUncommon Uncommon = true
-isUncommon _        = false
 
 boolToStr :: Boolean -> String
 boolToStr false = "No"
